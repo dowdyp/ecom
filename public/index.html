@@ -4,6 +4,8 @@
 
 <head>
 
+
+
 	<title>eCommerce</title>
 
 	<!-- Metas -->
@@ -21,18 +23,27 @@
 	<link rel="stylesheet" href="../src/css/main.css">
 	<link rel="favicon" href="../src/img/favicon.ico">
 
+	<!-- Scripts -->
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+	<script type="text/javascript" src="../src/js/main.js"></script>
+
+	<!-- Slick is best carousel -->
+
+	<script type="text/javascript" src="../src/slick/slick.min.js"></script>
+
 </head>
 
-<body>
+<body ng-app="ecom" ng-controller="ecomCtrl">
 	<div class="container">
 	
 		<div class="sec-nav">
 
 			<div class="sec-left-nav"> 
 				<img class="thumb-preview" src="../src/img/baxter-og.png">
-			</div>
-			<div class="sec-right-nav">
-				<a href="https://instagram.com/fridays-at-baxter">IG</a>
 			</div>
 		
 		</div>
@@ -53,26 +64,19 @@
  -->
 
  		<div class="sl-container">
-			<img src="http://placehold.it/1000x1000">
  		</div>
-
 		<div class="rec-prod">
-			<span>Popular Products</span>
 
+			<span class="header">Popular Products</span>
+			<div class="rec-prod-container">
 
+				<div class="sin-prod" ng-repeat="prod in rec_products">
+					<img class="thumb" ng-src="{{prod.thumb.url}}">
+				</div>
+
+			</div>
+		
 		</div>
-
 	</div>	
-
-
-	<!-- Scripts -->
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="../src/js/main.js"></script>
-
-	<!-- Slick is best carousel -->
-
-	<script type="text/javascript" src="../src/slick/slick.min.js"></script>
-
 </body>
 </html>
