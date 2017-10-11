@@ -71,7 +71,17 @@
 			<div class="rec-prod-container">
 
 				<div class="sin-prod" ng-repeat="prod in rec_products">
-					<img class="thumb" ng-src="{{prod.thumb.url}}">
+					<img class="thumb" ng-src="{{prod.thumb_url}}">
+					<div class="sin-prod-desc">
+						<div class="desc-split">
+							<span class="desc-head-text">{{prod.keyword}}</span>
+							<span class="desc-text">{{prod.desc}}</span>
+						</div>
+						<div class="desc-split">
+							<span class="desc-price">{{prod.price}}</span>
+							<button class="desc-btn" ng-click="addCart(prod.pid)">Add to Cart</button>
+						</div>
+					</div>
 				</div>
 
 			</div>
