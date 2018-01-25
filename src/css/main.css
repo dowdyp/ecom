@@ -2,15 +2,9 @@
 html, body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
-<<<<<<< HEAD
     background-color: #fcfcff;
     width: 100%;
     min-height: 100%;
-=======
-    background-color: #fdf5ea;
-    width: 100vw;
-    min-height: 100vh;
->>>>>>> 3624427ccb07e8a1710aa9a583ed791446d0df91
 }
 .container {
     height: 100%;
@@ -144,6 +138,8 @@ html, body {
 	border-radius: 10px;
 	min-height: 200px;
 	align-self: center;
+	display: flex;
+	flex-direction: column;
 }
 
 #cart {
