@@ -1,27 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
-body {
+html, body {
     margin: 0px;
     font-family: 'Montserrat', sans-serif;
     background-color: #fcfcff;
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    min-height: 100%;
 }
 .container {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 .sec-nav {
-    width: 100%;
     height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0% 15%;
     align-items: center;
-    -webkit-box-shadow: 0px -25px 131px -10px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px -25px 131px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px -25px 131px -10px rgba(0, 0, 0, 0.75);
+    border-bottom: solid 1px lightgrey;
 }
 .sec-left-nav {
     height: 100%;
@@ -29,7 +28,7 @@ body {
     align-items: center;
 }
 .thumb-preview {
-    height: 90%;
+    height: 75%;
 }
 .sl-container {
     height: 400px;
@@ -60,8 +59,7 @@ body {
 
 .sin-prod {
 	transition: 0.4s;
-	width: 350px;
-	height: 450px;
+	width: 30%;
 	margin: 0% 1.5% 1.5% 1.5%;
 	border: solid 1px #e2d6ca;
 	border-radius: 10px;
@@ -71,15 +69,15 @@ body {
 .sin-prod:hover {
 	transition: 0.1s;
 	border: 1px solid #b6ada6;
-	-webkit-box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
-	box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.15);
+	box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.15);
 }
 
 .sin-prod-desc {
-	padding: 30px;
+	padding: 20px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: row ;
 	justify-content: space-between;
 }
 
@@ -103,10 +101,23 @@ body {
 	margin: 2px;
 }
 
+.desc-price {
+	text-align: right;
+}
+
 .desc-btn {
+	margin: 5px 0px;
 	width: 100px;
 	height: 30px;
-	background-color: lightblue; 
+	color: #fff;
+	border: solid 1px #2e6da4;
+	border-radius: 3px;
+	background-color: #337ab7;
+}
+
+.desc-btn:hover {
+	transition: 0.06s;
+	background-color: #446CB3;
 }
 
 .thumb {
@@ -118,4 +129,18 @@ body {
 .header {
 	display: block;
 	padding: 30px;
+}
+
+.cart {
+	width: 60%;
+	margin: 50px;
+	border: solid 1px grey;
+	border-radius: 10px;
+	min-height: 200px;
+	align-self: center;
+}
+
+#cart {
+	width: 40px;
+	height: 40px;
 }

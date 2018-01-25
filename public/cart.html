@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<title>eCommerce</title>
+
+	<!-- Metas -->
+
+	<meta charset="UTF-8">
+	<meta name="og-title" content="Baxter Merch - For Students, by Students">
+	<meta name="og:description" content="A place for Baxter Academy merchandise to be sold to the public, designed and developed by a baxter student.">
+	<meta name="og:image" content="../src/img/baxter-og.png">
+	<meta name="og:url" content="https://bamerch.parkerd.net">
+	<!-- Creds <meta name="author" content="Parker Dowdy"> -->
+
+	<!-- Links to rel -->
+
+	<link rel="stylesheet" type="text/css" href="../src/slick/slick.css">
+	<link rel="stylesheet" href="../src/css/main.css">
+	<link rel="favicon" href="../src/img/favicon.ico">
+
+	<!-- Scripts -->
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="../src/js/main.js"></script>
+
+	<!-- Slick is best carousel -->
+
+	<script type="text/javascript" src="../src/slick/slick.min.js"></script>
+
+</head>
+
+<body id="app">
+	
+	<div class="container">
+	
+		<div class="sec-nav">
+
+			<div class="sec-left-nav"> 
+				<img class="thumb-preview" src="../src/img/baxter-og.png">
+			</div>
+
+			<div class="sec-right-nav">
+				<a href="./cart"><img id="cart" src="https://image.flaticon.com/icons/png/512/2/2772.png"></a>
+			</div>
+		
+		</div> 
+	
+		<div class="cart">
+			
+			<div v-if="">Your cart is empty!</div>
+
+		</div>
+	
+	</div>	
+</body>
+</html>

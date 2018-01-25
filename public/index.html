@@ -4,8 +4,6 @@
 
 <head>
 
-
-
 	<title>eCommerce</title>
 
 	<!-- Metas -->
@@ -17,27 +15,22 @@
 	<meta name="og:url" content="https://bamerch.parkerd.net">
 	<!-- Creds <meta name="author" content="Parker Dowdy"> -->
 
-	<!-- Links to rel -->
+	<!-- CSS & FAVICON -->
 
 	<link rel="stylesheet" type="text/css" href="../src/slick/slick.css">
 	<link rel="stylesheet" href="../src/css/main.css">
 	<link rel="favicon" href="../src/img/favicon.ico">
 
-	<!-- Scripts -->
+	<!-- SCRIPTS -->
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-
-	<script type="text/javascript" src="../src/js/main.js"></script>
-
-	<!-- Slick is best carousel -->
-
-	<script type="text/javascript" src="../src/slick/slick.min.js"></script>
 
 </head>
 
-<body ng-app="ecom" ng-controller="ecomCtrl">
+<body id="app">
+	
 	<div class="container">
 	
 		<div class="sec-nav">
@@ -45,10 +38,58 @@
 			<div class="sec-left-nav"> 
 				<img class="thumb-preview" src="../src/img/baxter-og.png">
 			</div>
+
+			<div class="sec-right-nav">
+				<a href="./cart"><img id="cart" src="https://image.flaticon.com/icons/png/512/2/2772.png"></a>
+			</div>
 		
 		</div>
 
-			
+ 		<div class="sl-container">
+ 		</div>
+		<div class="rec-prod">
+
+			<div class="header">Popular Products</div>
+			<div class="rec-prod-container" id="recommended">
+
+				<button @click="clearCart()">clear cart</button>
+
+
+				<div class="sin-prod" v-for="item in items">
+					<img class="thumb" v-bind:src="item.thumb_url">
+
+					<div class="sin-prod-desc">
+
+						<div class="desc-split">
+
+							<div class="desc-head-text">{{ item.keyword }}</div>
+							<div class="desc-text">{{ item.desc }}</div>
+
+						</div>
+						<div class="desc-split">
+
+							<div class="desc-price">{{ item.price }}</div>
+							<button class="desc-btn addtocart" @click="addToCart(item.pid)">Add to Cart</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		
+		</div>
+	</div>	
+
+	<script type="text/javascript" src="../src/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
 <!-- 		<div class="sl-container">
 		
 			<div class="sl-carousel">
@@ -62,31 +103,3 @@
 		
 		</div>
  -->
-
- 		<div class="sl-container">
- 		</div>
-		<div class="rec-prod">
-
-			<span class="header">Popular Products</span>
-			<div class="rec-prod-container">
-
-				<div class="sin-prod" ng-repeat="prod in rec_products">
-					<img class="thumb" ng-src="{{prod.thumb_url}}">
-					<div class="sin-prod-desc">
-						<div class="desc-split">
-							<span class="desc-head-text">{{prod.keyword}}</span>
-							<span class="desc-text">{{prod.desc}}</span>
-						</div>
-						<div class="desc-split">
-							<span class="desc-price">{{prod.price}}</span>
-							<button class="desc-btn" ng-click="addCart(prod.pid)">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		
-		</div>
-	</div>	
-</body>
-</html>

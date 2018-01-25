@@ -1,0 +1,23 @@
+{
+  "name": "ecom",
+  "version": "1.0.0",
+  "description": "Simple app to buy Baxter merch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lelkek/ecom.git"
+  },
+  "author": "auw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lelkek/ecom/issues"
+  },
+  "homepage": "https://github.com/lelkek/ecom#readme",
+  "dependencies": {
+    "mongodb": "^2.2.33",
+    "shopify-cartjs": "^0.4.1"
+  }
+}
