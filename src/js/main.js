@@ -28,43 +28,37 @@ var recommended = new Vue({
 
 	methods: {
 		addToCart: function(id) {
-			console.log(id + " has been added to cart");
+			
+			// what are you adding?
+			console.log(id + " is being added to cart");
+
+
+			// get the cart
 			var cart = JSON.parse(localStorage.getItem("cart"));
+            if (!cart) cart = [];
 
-            if (cart) {
-                var ifExists = function checkIfItemExists(id) {
-                    for (i = 0; i < cart.length; i++) {
-                        if (id == cart[i].item) {
-                            return i;
-                        }
-                    }
-                }
 
-            var x = ifExists(id);
-            console.log(x);
-            if (cart[x]) {
+            // look for the item
+        	x = -1;
+            for(i in cart) if(cart[i].item == id) x = i;
+
+
+            // add it
+            if (x + 1) {
                 cart[x].quantity++
-                console.log(cart);
-                localStorage.setItem("cart", JSON.stringify(cart));
-            } else {
-                var temp = {};
-                temp.item = id;
-                temp.quantity = 1;
-                cart.push(temp);
-                console.log(cart);
-                localStorage.setItem("cart", JSON.stringify(cart));
+            } 
+            else {
+                cart.push({
+                	item : id,
+                	quantity : 1
+                });
             }
 
-			} else {
-				temp = [];
-				var push = {};
-				push.item = id;
-				push.quantity = 1;
-				temp.push(push);
-				var updated = JSON.stringify(temp);
-				localStorage.setItem("cart", updated);
-				console.log(updated);
-			}
+			
+			// UPDATE CART
+			console.log(cart);
+			localStorage.setItem("cart", JSON.stringify(cart));
+
 		},
 		clearCart: function() {
 			localStorage.removeItem("cart");
